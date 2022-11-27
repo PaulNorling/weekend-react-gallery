@@ -5,9 +5,9 @@ import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
 
 function App() {
-
+  // store get response data
   const [itemList, setItemList] = useState([]);
-
+  
   const fecthItems = () => {
     axios({
       method: 'GET',
@@ -35,7 +35,7 @@ function App() {
       console.log('Error on PUT:', error)
     })
   }
-
+  // run fetchItems one time
   useEffect( () => {
     fecthItems();
   }, [])

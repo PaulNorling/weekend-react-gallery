@@ -4,7 +4,7 @@ function GalleryItem(props) {
     
     const [isImageClicked, setIsImageClicked] = useState(false);
     
-    const likeClick = () => {
+    const likeHandle = () => {
         props.likeClick(props.item)
     }
     // like count display conditional render
@@ -21,15 +21,14 @@ function GalleryItem(props) {
 
     return(
     <div  className="GalleryItem">
-      {/* image description toggle */}
       <div onClick={() => setIsImageClicked(!isImageClicked)}>
         {isImageClicked ? 
-          <div class="description">{props.item.description}</div> :
-          <div class="img-holder"> <img class="img" src={props.item.path}/></div>
+          <div className="description">{props.item.description}</div> :
+          <div className="img-holder"> <img className="img" src={props.item.path}/></div>
         }
       </div>
       <div>
-        <button class="LikeButton"onClick={likeClick}>Like</button>
+        <button className="LikeButton"onClick={likeHandle}>Like</button>
         <div>{likeCount(props.item.likes)}</div>
       </div>
     </div>
